@@ -13,7 +13,7 @@
                         placeholder="Nombre de la compañia">
                 </div>
                 <div *ngIf="companyName?.invalid && (companyName?.dirty || companyName?.touched)" class="alert alert-danger">
-                    <div *ngIf="companyName?.hasError('required')">Company Name is required.</div>
+                    <div *ngIf="companyName?.hasError('required')">Nombre de la compañia es requerido.</div>
                 </div>
 
                 <div class="input-group form-item">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div *ngIf="cedula?.invalid && (cedula?.dirty || cedula?.touched)" class="alert alert-danger">
-                    <div *ngIf="cedula?.hasError('required')">Cédula Name is required.</div>
+                    <div *ngIf="cedula?.hasError('required')">Cédula es requerida.</div>
                 </div>
 
                 <div class="form-group form-item">
@@ -31,7 +31,7 @@
                         placeholder="Nombre de la persona para contacto">
                 </div>
                 <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
-                    <div *ngIf="name?.hasError('required')">Name is required.</div>
+                    <div *ngIf="name?.hasError('required')">Nombre de contacto  es requerido.</div>
                 </div>
 
                 <div class="form-group form-item">
@@ -39,7 +39,7 @@
                         placeholder="Titulo">
                 </div>
                 <div *ngIf="title?.invalid && (title?.dirty || title?.touched)" class="alert alert-danger">
-                    <div *ngIf="title?.hasError('required')">Titulo is required.</div>
+                    <div *ngIf="title?.hasError('required')">Titulo es requerido.</div>
                 </div>
 
                 <div class="form-group form-item">
@@ -47,7 +47,7 @@
                         placeholder="Correo electrónico">
                 </div>
                 <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
-                    <div *ngIf="email?.hasError('required')">Correo eléctronico is required.</div>
+                    <div *ngIf="email?.hasError('required')">Correo eléctronico es requerido.</div>
                     <div *ngIf="email?.hasError('email')">Formato de correo inválido.</div>
                 </div>
 
@@ -56,19 +56,22 @@
                         placeholder="Teléfono">
                 </div>
                 <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="alert alert-danger">
-                    <div *ngIf="phone?.hasError('required')">Telefono is required.</div>
+                    <div *ngIf="phone?.hasError('required')">Telefono es requerido.</div>
+                    <div *ngIf="phone?.hasError('minlength')">Mínimo debe tener 7 dígitos y se encontraron {{phone!.value?.length}} dígitos.</div>
+                    <div *ngIf="phone?.hasError('maxlength')">Máximo debe tener 10 dígitos y se encontraron {{phone!.value?.length}} dígitos.</div>
                     <div *ngIf="phone?.hasError('pattern')">Solo caracteres numéricos son permitidos.</div>
                 </div>
 
                 <div class="form-check form-item">
                     <input class="form-check-input" type="checkbox" value="" id="privacy-term" formControlName="terms">
-                    <label class="form-check-label" for="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1" (click)="openReadingModal()">
                         He leído y acepto el <span class="privacy-link">Aviso de privacidad/Términos y condiciones</span>
                     </label>
                 </div>
                 <div *ngIf="terms?.invalid && (terms?.dirty || terms?.touched)" class="alert alert-danger">
-                    <div *ngIf="terms?.hasError('required')">Terminos is required.</div>
+                    <div *ngIf="terms?.hasError('required')">Es necesario aceptar los Terminos y condiciones.</div>
                 </div>
+                
 
                 <div class="submit-box">
                     <button (click)="onSubmit()" type="button" class="btn btn-primary" 
