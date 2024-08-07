@@ -19,7 +19,10 @@
                 <div class="input-group form-item">
                     <input type="text" class="form-control" placeholder="Cédula" formControlName="cedula">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+                        <button class="btn btn-outline-primary" type="button" id="button-addon2"
+                        (click)="openCedulaListModal()">
+                            Buscar
+                        </button>
                     </div>
                 </div>
                 <div *ngIf="cedula?.invalid && (cedula?.dirty || cedula?.touched)" class="alert alert-danger">

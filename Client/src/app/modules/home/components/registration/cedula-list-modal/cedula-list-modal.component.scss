@@ -1,0 +1,11 @@
+$blue-color: #1a75cf;
+$selected-color: #25be32;
+.row-select {
+    cursor: pointer;
+}
+.row-select:hover td, .row-select:hover th  {
+    background-color: #2596be;
+}
+.selected-row td, .selected-row th{
+    background-color: $selected-color;
+}

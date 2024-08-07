@@ -18,3 +18,25 @@ export interface RegisterDto {
     email: string;
     phone: string;
 }
+
+export interface CedulaInfoDto {
+    items: Array<CedulaDto>;
+}
+
+export interface CedulaDto {
+    anioreg: number;
+    desins: string;
+    idCedula: string;
+    materno: string;
+    paterno: string;
+    nombre: string;
+    titulo: string;
+}
+
+export interface CedulaTable {
+    anioreg: number;
+    institucion: string;
+    idCedula: string;
+    nombreCompleto: string;
+    titulo: string;
+}
