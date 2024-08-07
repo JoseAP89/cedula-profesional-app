@@ -1,0 +1,84 @@
+<main class="wrapper">
+    <section class="left-window">
+        <img src="assets/images/wee-claims.png" alt="image">
+    </section>
+    <section class="right-window">
+        <h3 class="form-title">
+            Registro para participantes
+        </h3>
+        <div class="form-wrapper">
+            <form [formGroup]="registration">
+                <div class="form-group form-item">
+                    <input type="text" class="form-control" id="company-name" formControlName="companyName"
+                        placeholder="Nombre de la compañia">
+                </div>
+                <div *ngIf="companyName?.invalid && (companyName?.dirty || companyName?.touched)" class="alert alert-danger">
+                    <div *ngIf="companyName?.hasError('required')">Company Name is required.</div>
+                </div>
+
+                <div class="input-group form-item">
+                    <input type="text" class="form-control" placeholder="Cédula" formControlName="cedula">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+                    </div>
+                </div>
+                <div *ngIf="cedula?.invalid && (cedula?.dirty || cedula?.touched)" class="alert alert-danger">
+                    <div *ngIf="cedula?.hasError('required')">Cédula Name is required.</div>
+                </div>
+
+                <div class="form-group form-item">
+                    <input type="text" class="form-control" id="nombre-contacto" formControlName="name"
+                        placeholder="Nombre de la persona para contacto">
+                </div>
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+                    <div *ngIf="name?.hasError('required')">Name is required.</div>
+                </div>
+
+                <div class="form-group form-item">
+                    <input type="text" class="form-control" id="titulo" formControlName="title"
+                        placeholder="Titulo">
+                </div>
+                <div *ngIf="title?.invalid && (title?.dirty || title?.touched)" class="alert alert-danger">
+                    <div *ngIf="title?.hasError('required')">Titulo is required.</div>
+                </div>
+
+                <div class="form-group form-item">
+                    <input type="text" class="form-control" id="email" formControlName="email"
+                        placeholder="Correo electrónico">
+                </div>
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+                    <div *ngIf="email?.hasError('required')">Correo eléctronico is required.</div>
+                    <div *ngIf="email?.hasError('email')">Formato de correo inválido.</div>
+                </div>
+
+                <div class="form-group form-item">
+                    <input type="text" class="form-control" id="phone" formControlName="phone"
+                        placeholder="Teléfono">
+                </div>
+                <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="alert alert-danger">
+                    <div *ngIf="phone?.hasError('required')">Telefono is required.</div>
+                    <div *ngIf="phone?.hasError('pattern')">Solo caracteres numéricos son permitidos.</div>
+                </div>
+
+                <div class="form-check form-item">
+                    <input class="form-check-input" type="checkbox" value="" id="privacy-term" formControlName="terms">
+                    <label class="form-check-label" for="defaultCheck1">
+                        He leído y acepto el <span class="privacy-link">Aviso de privacidad/Términos y condiciones</span>
+                    </label>
+                </div>
+                <div *ngIf="terms?.invalid && (terms?.dirty || terms?.touched)" class="alert alert-danger">
+                    <div *ngIf="terms?.hasError('required')">Terminos is required.</div>
+                </div>
+
+                <div class="submit-box">
+                    <button (click)="onSubmit()" type="button" class="btn btn-primary" 
+                    [disabled]="registration.invalid">
+                        Continuar
+                    </button>
+                </div>
+            
+            </form>
+        </div>
+
+    </section>
+</main>

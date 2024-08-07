@@ -1,0 +1,49 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    $blue-color: #1a75cf;
+    .left-window {
+        background-color: rgba(242,244,250,255);
+        height: 100vh;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .right-window {
+        margin: 70px 40px;
+        height: 100vh;
+        .form-title {
+            color: $blue-color;
+            font-weight: bold;
+        }
+        .form-wrapper {
+            margin: 30px 10px;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            max-height: 80vh;
+            overflow-y: scroll !important;
+            .form-item {
+                margin-top: 15px;
+            }
+        }
+        .privacy-link {
+            color: $blue-color;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .submit-box {
+            margin-top: 30px;
+            display: flex;
+            button {
+                margin: 0 auto;
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+}
