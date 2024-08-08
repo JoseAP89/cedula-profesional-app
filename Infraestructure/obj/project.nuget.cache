@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TofmR5oinGlcICiWYm0n4gZte+0A7tUPp4Ic4O1z2berkClbVuYUePmhPbTxaBcAlM+0vOCAiNyOg+V7w272jQ==",
+  "dgSpecHash": "WzUITSZvIOEIMlc+lSkV5f7uGvO4qBSFbosvu1Rx2fIFemkSaDF4XobQ3EsAN0M4qMWMGoR3HkmBXk3EJQ5Rgw==",
   "success": true,
   "projectFilePath": "C:\\Users\\diana\\Documents\\MiCedulaApp\\cedula-profesional-app\\Infraestructure\\Infraestructure.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\diana\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\diana\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",

@@ -20,13 +20,21 @@ namespace Server.Controllers
         [HttpPost("search")]
         public async Task<ActionResult<CedulaInfoDto>> SearchCedula(CedulaSearchDto search)
         {
-            var res = await _searchCedulaService.GetCedulaInfoAsync(search);
-            if (res == null)
+            try
             {
-                return NotFound();
+                var res = await _searchCedulaService.GetCedulaInfoAsync(search);
+                if (res == null)
+                {
+                    return NotFound();
+                }
+                return Ok(res);
             }
-            return Ok(res);
+            catch (Exception _ex)
+            {
+                return BadRequest("Hubo un error buscando la cedula solicitada.");
+            }
         }
+
 
     }
 }

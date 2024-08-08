@@ -15,15 +15,7 @@ public class SearchCedulaService : ISearchCedulaService
     {
         using HttpClient client = new HttpClient();
         string url = $"https://cedulaprofesional.sep.gob.mx/cedula/buscaCedulaJson.action?json={{'maxResult':'{search.MaxResult}','nombre':'{search.Nombre}','paterno':'{search.Paterno}','materno':'{search.Materno}','idCedula':'{search.IdCedula}'}}";
-        CedulaInfoDto? res;
-        try
-        {
-            res = await client.GetFromJsonAsync<CedulaInfoDto>(url);
-        }
-        catch (Exception ex)
-        {
-            throw new Exception("Hubo un error procesando la solicitud");
-        }
+        var res = await client.GetFromJsonAsync<CedulaInfoDto>(url);
         return res;
     }
 }

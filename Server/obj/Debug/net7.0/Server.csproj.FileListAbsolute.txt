@@ -35,19 +35,15 @@ C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\obj\Debug\net
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\obj\Debug\net7.0\Server.pdb
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\obj\Debug\net7.0\Server.genruntimeconfig.cache
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\obj\Debug\net7.0\ref\Server.dll
-C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Humanizer.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.Data.Sqlite.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\SQLitePCLRaw.core.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\SQLitePCLRaw.provider.e_sqlite3.dll
-C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\runtimes\alpine-arm\native\libe_sqlite3.so
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\runtimes\alpine-arm64\native\libe_sqlite3.so
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\runtimes\alpine-x64\native\libe_sqlite3.so
@@ -71,3 +67,4 @@ C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Server\bin\Debug\net7.0\Newtonsoft.Json.dll

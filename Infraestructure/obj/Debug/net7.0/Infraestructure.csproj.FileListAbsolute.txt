@@ -13,5 +13,3 @@ C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Infraestructure\obj\
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Infraestructure\obj\Debug\net7.0\refint\Infraestructure.dll
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Infraestructure\obj\Debug\net7.0\Infraestructure.pdb
 C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Infraestructure\obj\Debug\net7.0\ref\Infraestructure.dll
-C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Infraestructure\bin\Debug\net7.0\Infraestructure.runtimeconfig.json
-C:\Users\diana\Documents\MiCedulaApp\cedula-profesional-app\Infraestructure\obj\Debug\net7.0\Infraestructure.genruntimeconfig.cache
