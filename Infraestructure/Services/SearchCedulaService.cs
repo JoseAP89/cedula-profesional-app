@@ -13,6 +13,10 @@ public class SearchCedulaService : ISearchCedulaService
 {
     public async Task<CedulaInfoDto> GetCedulaInfoAsync(CedulaSearchDto search)
     {
+        if (string.IsNullOrEmpty(search.MaxResult))
+        {
+            search.MaxResult = "10"; 
+        }
         using HttpClient client = new HttpClient();
         string url = $"https://cedulaprofesional.sep.gob.mx/cedula/buscaCedulaJson.action?json={{'maxResult':'{search.MaxResult}','nombre':'{search.Nombre}','paterno':'{search.Paterno}','materno':'{search.Materno}','idCedula':'{search.IdCedula}'}}";
         var res = await client.GetFromJsonAsync<CedulaInfoDto>(url);
