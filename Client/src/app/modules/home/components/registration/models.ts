@@ -40,3 +40,22 @@ export interface CedulaTable {
     nombreCompleto: string;
     titulo: string;
 }
+
+export interface ParticipantDto
+{
+    participantId: number;
+    companyName: string;
+    cedula: string;
+    name: string;
+    title: string;
+    email: string;
+    phone: string;
+}
+
+export interface CedulaSearchDto {
+    maxResult?: string;
+    idCedula: string;
+    nombre?: string;
+    materno?: string;
+    paterno?: string;
+}

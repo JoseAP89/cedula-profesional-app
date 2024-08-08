@@ -1,10 +1,12 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import { CedulaTable, RegistrationForm } from './models';
+import { CedulaTable, RegistrationForm, CedulaSearchDto } from './models';
 import { CommonModule } from '@angular/common';
 import { ReadingModalComponent } from '../../../../shared/components/reading-modal/reading-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CedulaListModalComponent } from './cedula-list-modal/cedula-list-modal.component';
+import { CedulaService } from '../../services/cedula.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -19,6 +21,7 @@ export class RegistrationComponent{
   private modalService = inject(NgbModal);
 
   constructor(
+    private cedulaService: CedulaService
   ){
     this.registration = new FormGroup<RegistrationForm>({
       companyName: new FormControl('', {nonNullable: true, validators: [Validators.required]}),
@@ -62,36 +65,35 @@ export class RegistrationComponent{
 		modalRef.componentInstance.title = 'Aviso de Privacidad/Terminos y condiciones';
 	}
 
-  openCedulaListModal() {
+  async openCedulaListModal() {
+    let cedula = this.cedula.value;
+    let search : CedulaSearchDto = {
+      idCedula : cedula
+    };
+    let data =  await firstValueFrom(this.cedulaService.searchCedula(search));
+    let dataTable = data.items.map( d => {
+      let table : CedulaTable = {
+        anioreg: d.anioreg,
+        institucion: d.desins.toUpperCase(),
+        nombreCompleto: [d.nombre, d.paterno, d.materno].join(" ").toUpperCase().trim(),
+        titulo: d.titulo.toUpperCase(),
+        idCedula: d.idCedula
+      }
+      return table;
+    });
+    if(dataTable.length == 1){
+      this.registration.patchValue({"cedula" : dataTable[0].idCedula, "name": dataTable[0].nombreCompleto, "title": dataTable[0].titulo});
+      return;
+    }
 		const modalRef = this.modalService.open(CedulaListModalComponent, {
       size: "lg",
     });
-		modalRef.componentInstance.cedulas = [
-      { anioreg: 2021, institucion: "UNAM", idCedula: "1", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "2", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "3", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "4", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "5", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "6", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "7", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "8", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "10", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "11", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "12", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "13", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "14", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "15", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "16", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "17", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "18", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "19", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "20", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "21", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-      { anioreg: 2021, institucion: "UNAM", idCedula: "22", nombreCompleto: "Jose Alvarez", titulo: "LIC EN ECO"},
-    ]
+		modalRef.componentInstance.cedulas = dataTable;
     modalRef.result.then( (res: CedulaTable) => {
       if (!!res?.idCedula) {
         this.registration.patchValue({"cedula" : res.idCedula, "name": res.nombreCompleto, "title": res.titulo});
+      } else {
+        this.registration.patchValue({"name": "", "title": ""});
       }
     })
 	}
