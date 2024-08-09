@@ -3,9 +3,15 @@ $selected-color: #25be32;
 .row-select {
     cursor: pointer;
 }
+.th, td {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 .row-select:hover td, .row-select:hover th  {
     background-color: #2596be;
 }
-.selected-row td, .selected-row th{
+.selected-row.selected-row.selected-row td, .selected-row.selected-row.selected-row th{
     background-color: $selected-color;
 }

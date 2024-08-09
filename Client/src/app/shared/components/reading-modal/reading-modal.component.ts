@@ -14,6 +14,7 @@ export class ReadingModalComponent {
 
   @Input() body: string = "Body";
   @Input() title: string = "Header";
+  @Input() buttonAction: string = "Cerrar";
 
   constructor(){
   }

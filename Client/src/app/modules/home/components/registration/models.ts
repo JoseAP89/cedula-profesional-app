@@ -43,7 +43,7 @@ export interface CedulaTable {
 
 export interface ParticipantDto
 {
-    participantId: number;
+    participantId?: number;
     companyName: string;
     cedula: string;
     name: string;
@@ -58,4 +58,11 @@ export interface CedulaSearchDto {
     nombre?: string;
     materno?: string;
     paterno?: string;
+}
+
+export interface PageContainer<T> {
+    total: number;
+    page: number;
+    pageSize: number;
+    items: T[];
 }

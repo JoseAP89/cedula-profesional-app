@@ -8,4 +8,34 @@
 .alert {
     padding: 4px;
 }
+.modal-header {
+    border-bottom: none;
+}
+.modal-footer {
+    border-top: none;
+}
+$blue-color: #1a75cf;
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .left-window {
+        background-color: rgba(242,244,250,255);
+        height: 100vh;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .right-window {
+        margin: 70px 40px;
+        height: 100vh;
+        .form-title {
+            color: $blue-color;
+            font-weight: bold;
+        }
+    }
+}
 
