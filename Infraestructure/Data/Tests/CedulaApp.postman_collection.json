@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "4fabf996-fd62-4eb7-b7c0-cfab5a35d3f8",
+		"name": "CedulaApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37536730"
+	},
+	"item": [
+		{
+			"name": "CedulaController",
+			"item": [
+				{
+					"name": "SearchCedula",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"maxResult\": \"100\",\r\n    \"nombre\": \"\",\r\n    \"paterno\": \"\",\r\n    \"materno\": \"\",\r\n    \"idCedula\": \"086433\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/cedula/search",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"cedula",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ParticipantController",
+			"item": [
+				{
+					"name": "AddParticipant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"MARTE ARTURO MILLÁN TORRES\",\r\n    \"CompanyName\": \"GINECOLOGÍA MARTE\",\r\n    \"Cedula\": \"0086433\",\r\n    \"Title\": \"ESPECIALIDAD EN GINECOLOGÍA Y OBSTETRICIA\",\r\n    \"Phone\": \"5566408009\",\r\n    \"Email\": \"gine-marte@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/participant",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"participant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateParticipant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ParticipantId\": 2,\r\n    \"Name\": \"MARTE ARTURO MILLÁN TORRES\",\r\n    \"CompanyName\": \"GINECOLOGÍA MARTE\",\r\n    \"Cedula\": \"0086433\",\r\n    \"Title\": \"ESPECIALIDAD EN GINECOLOGÍA Y OBSTETRICIA\",\r\n    \"Phone\": \"5566408009\",\r\n    \"Email\": \"gine-marte45@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/participant",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"participant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetParticipantById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"maxResult\": \"100\",\r\n    \"nombre\": \"\",\r\n    \"paterno\": \"\",\r\n    \"materno\": \"\",\r\n    \"idCedula\": \"08771\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/participant/90",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"participant",
+								"90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteParticipantById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"maxResult\": \"100\",\r\n    \"nombre\": \"\",\r\n    \"paterno\": \"\",\r\n    \"materno\": \"\",\r\n    \"idCedula\": \"08771\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/participant/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"participant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetParticipantsPagination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"maxResult\": \"100\",\r\n    \"nombre\": \"\",\r\n    \"paterno\": \"\",\r\n    \"materno\": \"\",\r\n    \"idCedula\": \"08771\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/participant/20/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"participant",
+								"20",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetParticipantsByCedulaId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"maxResult\": \"100\",\r\n    \"nombre\": \"\",\r\n    \"paterno\": \"\",\r\n    \"materno\": \"\",\r\n    \"idCedula\": \"08771\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7050/api/participant/cedula/0086433",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7050",
+							"path": [
+								"api",
+								"participant",
+								"cedula",
+								"0086433"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

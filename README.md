@@ -10,6 +10,11 @@ Se uso la clean architecture para la organización del proyecto junto con el sig
 * .NET 7
 * Sqlite3
 
+La carpeta de Infraestructura/Data contiene las siguientes carpetas:
+
+* Sql: muestra el DDL usado para diseñar la tabla de Participant.
+* Tests: contiene la colection usada en postman para probar los endpoints de los controladores.
+
 ## Pantallas
 
 #### Pantalla de Inicio
