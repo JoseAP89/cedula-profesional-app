@@ -15,6 +15,9 @@ La carpeta de Infraestructura/Data contiene las siguientes carpetas:
 * Sql: muestra el DDL usado para diseñar la tabla de Participant.
 * Tests: contiene la colection usada en postman para probar los endpoints de los controladores.
 
+Para ver un demo del proyecto, seguir el siguiente enlace en youtube:
+* https://youtu.be/BjCTSu263qo
+
 ## Pantallas
 
 #### Pantalla de Inicio
