@@ -114,9 +114,9 @@ export class RegistrationComponent implements AfterViewInit {
     let dataTable = data.items.map( d => {
       let table : CedulaTable = {
         anioreg: d.anioreg,
-        institucion: d.desins.toUpperCase(),
-        nombreCompleto: [d.nombre, d.paterno, d.materno].join(" ").toUpperCase().trim(),
-        titulo: d.titulo.toUpperCase(),
+        institucion: d.desins,
+        nombreCompleto: [d.nombre, d.paterno, d.materno].join(" ").trim(),
+        titulo: d.titulo,
         idCedula: d.idCedula
       }
       return table;

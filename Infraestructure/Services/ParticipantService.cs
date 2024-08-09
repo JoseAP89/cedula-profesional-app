@@ -25,11 +25,11 @@ public class ParticipantService : IParticipantService
         var participant = new Participant
         {
             Cedula = participantdto.Cedula,
-            Name = participantdto.Name.ToUpper(),
-            CompanyName = participantdto.CompanyName.ToUpper(),
-            Email = participantdto.Email,
+            Name = participantdto.Name,
+            CompanyName = participantdto.CompanyName,
+            Email = participantdto.Email.ToLower(),
             Phone = participantdto.Phone,
-            Title = participantdto.Title.ToUpper(),
+            Title = participantdto.Title,
         };
         _ctx.Participants.Add(participant); 
         await _ctx.SaveChangesAsync();
