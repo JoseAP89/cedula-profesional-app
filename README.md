@@ -2,7 +2,9 @@
 Pequeña app de registro, que incluye un check de cedulas profesionales usando una solicitud a la instancia de gobierno pertinente,
 y un regiestro para Particiapantes. 
 
-### Stack
+### Descripción
+
+Se uso la clean architecture para la organización del proyecto junto con el siguiente stack tegnológico:
 
 * Angular 18
 * .NET 7
