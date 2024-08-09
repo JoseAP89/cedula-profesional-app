@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Services;
 
-public class CedulaService : ICedulaService
+public class ParticipantService : IParticipantService
 {
     private readonly CedulaDbContext _ctx;
 
-    public CedulaService(CedulaDbContext _ctx)
+    public ParticipantService(CedulaDbContext _ctx)
     {
         this._ctx = _ctx;
     }
@@ -62,19 +62,22 @@ public class CedulaService : ICedulaService
         return participant;
     }
 
-    public async Task<List<Participant>> GetParticipantsAsync(int? limit)
+    public async Task<PageContainer<Participant>> GetParticipantsPaginationAsync(int page, int pageSize)
     {
-        var participants = limit switch 
+        int total = await _ctx.Participants.CountAsync();
+        var participants = await _ctx.Participants
+            .OrderByDescending(p => p.ParticipantId)
+            .Skip(page * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+        var pageContainer = new PageContainer<Participant>
         {
-            null => await _ctx.Participants
-                .OrderByDescending(p => p.ParticipantId)
-                .ToListAsync(),
-            _ => await _ctx.Participants
-                .OrderByDescending(p => p.ParticipantId)
-                .Take(limit.Value)
-                .ToListAsync()
+            Total = total,
+            Page = page,
+            PageSize = pageSize,
+            Items = participants
         };
-        return participants;
+        return pageContainer;
     }
 
     public async Task<Participant> UpdateParticipantAsync(ParticipantDto record)

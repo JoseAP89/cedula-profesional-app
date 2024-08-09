@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Contracts;
 
-public interface ICedulaService
+public interface IParticipantService
 {
     Task<Participant> GetParticipantByIdAsync(long id);    
     Task<List<Participant>> GetParticipantsByCedulaIdAsync(string cedulaId);    
-    Task<List<Participant>> GetParticipantsAsync(int? limit);    
+    Task<PageContainer<Participant>> GetParticipantsPaginationAsync(int page, int pageSize);
     Task<Participant> AddParticipantAsync(ParticipantDto participant);    
     Task<Participant> UpdateParticipantAsync(ParticipantDto participant);    
     Task<Participant> DeleteParticipantAsync(long participantId);    

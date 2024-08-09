@@ -9,36 +9,42 @@ namespace Server.Controllers
     [ApiController]
     public class ParticipantController : ControllerBase
     {
-        private readonly ICedulaService _cedulaService;
+        private readonly IParticipantService _cedulaService;
 
-        public ParticipantController(ICedulaService cedulaService)
+        public ParticipantController(IParticipantService cedulaService)
         {
             _cedulaService = cedulaService;
         }
 
-        [HttpGet("list/{limit?}")]
-        public async Task<ActionResult<List<ParticipantDto>>> GetParticipants(int? limit)
+        [HttpGet("{page}/{pageSize}")]
+        public async Task<ActionResult<PageContainer<ParticipantDto>>> GetParticipantsPagination(int page, int pageSize)
         {
             try
             {
-                var res = await _cedulaService.GetParticipantsAsync(limit);
+                var res = await _cedulaService.GetParticipantsPaginationAsync(page, pageSize);
                 if (res == null)
                 {
                     return NotFound("No se encontraron resultados.");
                 }
-                var participantsDto = res.Select(r =>
-                    new ParticipantDto
-                    {
-                        ParticipantId = r.ParticipantId,
-                        Cedula = r.Cedula,
-                        Name = r.Name,
-                        CompanyName = r.CompanyName,
-                        Phone = r.Phone,
-                        Email = r.Email,
-                        Title =r.Title
-                    }
-                );
-                return Ok(participantsDto);
+                var pageContainer = new PageContainer<ParticipantDto>
+                {
+                    Total = res.Total,
+                    Page = res.Page,
+                    PageSize = res.PageSize,
+                    Items = res.Items.Select(r =>
+                        new ParticipantDto
+                        {
+                            ParticipantId = r.ParticipantId,
+                            Cedula = r.Cedula,
+                            Name = r.Name,
+                            CompanyName = r.CompanyName,
+                            Phone = r.Phone,
+                            Email = r.Email,
+                            Title = r.Title
+                        }
+                    ).ToList()
+                };
+                return Ok(pageContainer);
             }
             catch (Exception ex)
             {
