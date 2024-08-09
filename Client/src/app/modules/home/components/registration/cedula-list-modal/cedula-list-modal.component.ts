@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { NgbActiveModal, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 import { CedulaTable } from '../models';
 import { CommonModule } from '@angular/common';

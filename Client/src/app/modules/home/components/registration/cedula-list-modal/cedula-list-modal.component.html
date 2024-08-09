@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for (cedula of cedulas| slice: (page-1) * pageSize : page * pageSize; track cedula) {
+                    @for (cedula of cedulas| slice: (page-1) * pageSize : page * pageSize; track cedula.nombreCompleto+cedula.institucion) {
                     <tr class="row-select" [ngClass]="{'selected-row': cedula.idCedula === selectedRowIdCedula && cedula.nombreCompleto == selectedRow.nombreCompleto}" (dblclick)="onSelectedRow(cedula)">
                         <th scope="row">{{ cedula.idCedula }}</th>
                         <td>{{cedula.nombreCompleto | uppercase}}</td>
@@ -34,7 +34,10 @@
             </table>
     
             <div class="d-flex justify-content-between p-2">
-                <ngb-pagination [collectionSize]="cedulas.length" [(page)]="page" [pageSize]="pageSize">
+                <ngb-pagination 
+                    [collectionSize]="cedulas.length" 
+                    [(page)]="page" 
+                    [pageSize]="pageSize">
                 </ngb-pagination>
     
                 <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize">

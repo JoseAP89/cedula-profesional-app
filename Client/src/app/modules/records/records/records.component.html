@@ -37,7 +37,13 @@
             </table>
 
             <div class="d-flex justify-content-between p-2">
-                <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="pageSize" (pageChange)="updateTable()">
+                <ngb-pagination 
+                    [collectionSize]="total" 
+                    [(page)]="page" 
+                    [pageSize]="pageSize" 
+                    (pageChange)="updateTable()"
+                    [maxSize]="5"
+                    [boundaryLinks]="true">
                 </ngb-pagination>
 
                 <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize" (ngModelChange)="updateTable()">

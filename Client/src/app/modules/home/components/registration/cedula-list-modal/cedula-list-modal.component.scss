@@ -1,5 +1,9 @@
 $blue-color: #1a75cf;
 $selected-color: #25be32;
+.modal-body {
+    height: 70vh;
+    overflow: scroll;
+}
 .row-select {
     cursor: pointer;
 }
