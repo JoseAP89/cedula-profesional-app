@@ -17,7 +17,6 @@ La carpeta de Infraestructura/Data contiene las siguientes carpetas:
 
 Para ver un demo del proyecto, seguir el siguiente enlace:
 * Drive: https://drive.google.com/file/d/1Qm69Tm13A7IvJYA3OL6VJD2SBlgQReJW/view
-* Youtube: https://youtu.be/BjCTSu263qo
 
 ## Pantallas
 
